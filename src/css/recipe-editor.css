@@ -1,0 +1,39 @@
+.recipe-editor {
+	display: flex;
+	padding: 15px;
+}
+
+.recipe-fields {
+	width: 400px;
+}
+
+.text-field {
+	font-family: 'Open Sans', sans-serif;
+	width: 100%;
+	max-width: 400px;
+	box-sizing: border-box;
+	padding: 8px;
+	display: block;
+	margin-bottom: 15px;
+	border: 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.name {
+	font-weight: 700;
+    font-size: 14px;
+}
+
+.recipe-remove {
+	align-self: flex-start;
+	border: 0;
+}
+
+.recipe-editor .tag-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.recipe-editor .tag-editor {
+	flex-basis: 30%;
+}

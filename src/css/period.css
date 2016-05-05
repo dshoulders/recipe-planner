@@ -1,0 +1,16 @@
+.period {
+	padding: 15px;
+}
+
+.startDate {
+	font-size: 14px;
+	margin-bottom: 10px;
+}
+
+.grid {
+	max-width: 100%;
+}
+
+.recipeCell {
+	vertical-align: top;
+}

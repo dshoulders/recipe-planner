@@ -1,0 +1,13 @@
+.recipe {
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.name {
+	font-size: 16px;
+	font-weight: 700;
+}
+
+.url {
+	word-break: break-all;
+}

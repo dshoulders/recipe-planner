@@ -1,0 +1,21 @@
+.main-nav {
+	margin: 15px 0px;
+}
+
+.main-nav-item:first-child {
+    border-left: 0;
+}
+
+.main-nav-item {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    text-decoration: none;
+    color: #303030;
+    border-left: 1px solid #303030;
+    padding: 8px 15px;
+}
+
+.main-nav-item.active {
+    color: #E00000;
+}

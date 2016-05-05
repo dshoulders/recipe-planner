@@ -1,0 +1,21 @@
+.tags {
+    margin-top: 30px;
+}
+
+.add-tag {
+    margin-left: 15px;
+}
+
+.tag-editor {
+    display: flex;
+    padding: 15px;
+}
+
+.tag-fields {
+    width: 400px;
+}
+
+.tag-remove {
+    align-self: flex-start;
+    border: 0;
+}
