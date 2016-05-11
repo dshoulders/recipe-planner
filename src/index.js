@@ -20,8 +20,6 @@ const store = createStore(
 	)
 )
 
-autoSave(store)
-
 render(
 	<Provider store={store}>
 		<Router history={browserHistory}>

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { updateRecipe, removeRecipe } from '../actions'
+import { updateRecipe, removeRecipe } from '../actions/recipe'
 import RecipeEditor from '../components/RecipeEditor'
 import '../css/recipe-editor.css'
 

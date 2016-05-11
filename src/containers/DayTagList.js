@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import TagList from '../components/TagList'
-import { setDayTag } from '../actions'
+import { setDayTag } from '../actions/day'
 
 const mapStateToProps = (state, ownProps) => {
 	return {

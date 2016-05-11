@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import TagList from '../components/TagList'
-import { setRecipeTag } from '../actions'
+import { setRecipeTag } from '../actions/recipe'
 
 const mapStateToProps = (state, ownProps) => {
 	return {

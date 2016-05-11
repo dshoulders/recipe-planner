@@ -1,18 +1,26 @@
 import React from 'react'
-import Period from '../containers/Period'
 import MainNav from './MainNav'
-import { fetchData } from '../actions'
+import SimpleAuth from '../containers/SimpleAuth'
 import '../css/app.css'
 
-const App = ({ dispatch, haveData, children }) => {
+const App = ({ isAuthenticated, dataToSave, haveData, needToSave, children, sendAuthCheck, attemptGetData, attemptSave }) => {
+	
+	if(isAuthenticated === null) {
+		sendAuthCheck()
+	}	
 	
 	if(!haveData) {
-		dispatch(fetchData())
+		attemptGetData()
+	}	
+	
+	if(needToSave) {
+		attemptSave(dataToSave)
 	}
 	
 	return (
 		<div className={'app'}>
 			<MainNav />
+			<SimpleAuth />
 			{children}			
 		</div>
 	)

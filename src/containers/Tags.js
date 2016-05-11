@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import Tags from '../components/Tags'
-import { addTag, removeTag, updateTag } from '../actions'
+import { addTag, removeTag, updateTag } from '../actions/tag'
 
 
 const mapStateToProps = (state) => {

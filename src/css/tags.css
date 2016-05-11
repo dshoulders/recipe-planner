@@ -9,6 +9,7 @@
 .tag-editor {
     display: flex;
     padding: 15px;
+    padding-bottom: 0px;
 }
 
 .tag-fields {

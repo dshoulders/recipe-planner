@@ -5,6 +5,7 @@ import recipes from './recipes'
 import tags from './tags'
 import ui from './ui'
 import haveData from './haveData'
+import simpleAuth from './simpleAuth'
 
 export default combineReducers({
 	days,
@@ -12,5 +13,6 @@ export default combineReducers({
 	recipes,
 	tags,
 	ui,
-	haveData
+	haveData,
+	simpleAuth
 })
