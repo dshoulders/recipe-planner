@@ -47,11 +47,18 @@ app.post('/api/save', function (req, res) {
 })
 
 
-var server = app.listen(3001, function () {
+// var server = app.listen(3001, function () {
 
-	var host = server.address().address
-	var port = server.address().port
+// 	var host = server.address().address
+// 	var port = server.address().port
 
-	console.log("App listening at http://%s:%s", host, port)
+// 	console.log("App listening at http://%s:%s", host, port)
 
-})
+// })
+
+var server_port = process.env.OPENSHIFT_NODEJS_PORT || 3001
+var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
+ 
+app.listen(server_port, server_ip_address, function () {
+  console.log( "Listening on " + server_ip_address + ", server_port " + server_port )
+});
