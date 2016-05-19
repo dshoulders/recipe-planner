@@ -10,7 +10,7 @@ const Days = ({ days, onClick }) => {
 					return (
 						<div className={'day'} key={day.id}>
 							<div className={'day-name'}>{ day.name }</div>
-							<DayTagList dayId={day.id} selectedTags={day.allowedTags} />
+							<DayTagList dayId={day.id} selectedTags={day.tags} />
 						</div>
 					)
 				})

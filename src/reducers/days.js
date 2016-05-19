@@ -11,7 +11,7 @@ const days = (state = [], action) => {
 			let { dayId, tagId, value } = action
 			
 			let selectedTags = state.reduce((prev, day) => {
-				return day.id === dayId ? day.allowedTags : prev
+				return day.id === dayId ? day.tags : prev
 			}, {})
 			
 			if(value){

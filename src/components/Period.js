@@ -3,10 +3,13 @@ import { connect } from 'react-redux'
 import Recipe from '../components/Recipe'
 import '../css/period.css'
 
-let Period = ({ startDateFormatted, endDateFormatted, dayRows }) => {
+let Period = ({ id, startDateFormatted, endDateFormatted, dayRows, removePeriod }) => {
 	return (
 		<div className={'period'}>
-			<div className={'startDate'}>{startDateFormatted} - {endDateFormatted}</div>
+			<header className={'period-header'}>
+				<div className={'start-date'}>{startDateFormatted} - {endDateFormatted}</div>
+				<button className={'button period-remove'} onClick={() => removePeriod(id)}>X</button>
+			</header>
 			<table className={'grid'}>
 				<thead>
 					<tr>
@@ -26,7 +29,7 @@ let Period = ({ startDateFormatted, endDateFormatted, dayRows }) => {
 								{
 									dayRow.map((recipe, cellIndex) => {
 										return (
-											<td className={'recipeCell'} key={cellIndex}>
+											<td className={'recipe-cell'} key={cellIndex}>
 												<Recipe {...recipe} />
 											</td>
 										)
