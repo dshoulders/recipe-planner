@@ -1,6 +1,5 @@
 var path = require('path')
 var webpack = require('webpack')
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
 	devtool: 'eval',
@@ -13,9 +12,6 @@ module.exports = {
 		publicPath: '/static/'
 	},
 	plugins: [
-        new ExtractTextPlugin("style.css", {
-            allChunks: true
-        }),
 		new webpack.DefinePlugin({
 			'process.env':{
 				'NODE_ENV': JSON.stringify('production')
@@ -35,7 +31,7 @@ module.exports = {
 		},
 		{
 			test: /\.css$/,
-			loader: ExtractTextPlugin.extract("style-loader", "css-loader")/*['style', 'css', 'autoprefixer']*/,
+			loaders: ['style', 'css'],
 			include: path.join(__dirname, 'src')
 		}]
 	}
