@@ -61,7 +61,7 @@ export const postJSON = (url, data) => {
 	.then(res => res.json())
 }
 
-export const getNextStartDate = (lastStartDate) => {
+export const getNextStartDate = (lastStartDate = new Date()) => {
 	const mondayFollowingLastPeriod = moment(new Date(lastStartDate)).add(28, 'days')
 	const mondayFollowingToday = moment(new Date()).day(8)
 	
@@ -83,8 +83,6 @@ const selectRecipe = (index, recipes, currentList, previousList, days) => {
 	const dayId = index % 7
 	const allowedTags = getById(days, dayId).tags
 	const recipeCount = recipes.length
-	
-	//recipes = [].concat(recipes) // make a copy
 	
 	const preferences = recipes.map(recipe => {
 		
@@ -116,12 +114,13 @@ const selectRecipe = (index, recipes, currentList, previousList, days) => {
 export const generateRecipeList = (state) => {
 
 	const latestPeriod = state.periods[state.periods.length - 1]
+	const previousRecipeList = latestPeriod ? latestPeriod.recipes : []
 	const { recipes, tags, days } = state		
 		
 	const recipeList = []
 	
 	for(let i = 0; i < 28; i++){
-		recipeList.push(selectRecipe(i, recipes, recipeList, latestPeriod.recipes, days))
+		recipeList.push(selectRecipe(i, recipes, recipeList, previousRecipeList, days))
 	}
 	
 	console.log(recipeList)

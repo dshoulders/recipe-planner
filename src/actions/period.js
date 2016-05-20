@@ -5,7 +5,8 @@ export function addPeriod() {
 	return (dispatch, getState) => {
 		
 		const state = getState()
-		const lastStartDate = state.periods[state.periods.length - 1].startDate
+		const lastPeriod = state.periods[state.periods.length - 1]
+		const lastStartDate = lastPeriod ? lastPeriod.startDate : null
 		
 		const newPeriod = {
 			id: getNextId(state.periods),
