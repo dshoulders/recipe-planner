@@ -6,7 +6,7 @@ const Calendar = ({ periods, addPeriod }) => {
 	
 	return (
 		<div className={'calendar'}>
-			<button className={'button'} onClick={addPeriod}>Add Period</button>
+			<button className={'button'} onClick={addPeriod}>Generate</button>
 			{
 				periods.map((period, i) => {
 					return <Period period={period} key={i} />
