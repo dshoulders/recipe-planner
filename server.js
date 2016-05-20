@@ -25,12 +25,12 @@ app.get('/api/authcheck', function (req, res) {
 	res.send({ success: isAuthenticated(req) })
 })
 
-app.get('/', function (req, res) {
-	res.sendFile( __dirname + "/" + "index.html" )
-})
-
 app.get('/api/data', function (req, res) {
 	res.sendFile( __dirname + "/" + "data.json" )
+})
+
+app.get('/', function (req, res) {
+	res.sendFile( __dirname + "/" + "index.html" )
 })
 
 app.post('/api/save', function (req, res) {	
@@ -45,16 +45,6 @@ app.post('/api/save', function (req, res) {
 		res.send({ success: false })
 	}
 })
-
-
-// var server = app.listen(3001, function () {
-
-// 	var host = server.address().address
-// 	var port = server.address().port
-
-// 	console.log("App listening at http://%s:%s", host, port)
-
-// })
 
 var server_port = process.env.OPENSHIFT_NODEJS_PORT || 3001
 var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'

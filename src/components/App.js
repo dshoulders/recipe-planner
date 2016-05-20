@@ -19,8 +19,10 @@ const App = ({ isAuthenticated, dataToSave, haveData, needToSave, children, send
 	
 	return (
 		<div className={'app'}>
-			<MainNav />
-			<SimpleAuth />
+			<div className={'header'}>
+				<MainNav />
+				<SimpleAuth />
+			</div>
 			{children}			
 		</div>
 	)
