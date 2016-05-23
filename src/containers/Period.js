@@ -9,9 +9,15 @@ const mapStateToProps = (state, ownProps) => {
 	function mapRecipe(recipeId, index, startDate) {
 		
 		let recipe = state.recipes.filter(recipe => recipe.id === recipeId)[0]		
-		let date = startDate.clone().add(index, 'days')
+		let date = startDate.clone().add(index, 'days').startOf('day')
+		let today = moment().startOf('day')
+		let isFuture = date.isAfter(today)
+		let isToday = date.isSame(today)
+		let isPast = date.isBefore(today)
 		
-		recipe = Object.assign({}, recipe, { date })
+		recipe = Object.assign({}, recipe, { 
+			date, isFuture, isToday, isPast
+		 })
 		
 		return recipe
 	}
@@ -22,16 +28,12 @@ const mapStateToProps = (state, ownProps) => {
 	const endDate = startDate.clone().add(27, 'days')
 	const endDateFormatted = moment(endDate).format('Do MMMM')
 	const recipes = ownProps.period.recipes.map((recipeId, index) => { return mapRecipe(recipeId, index, startDate) })
-	const dayRows = recipes.reduce((accumulator, currentRecipe, index) => {
-		accumulator[index % 7].push(currentRecipe)
-		return accumulator
-	}, [[], [], [], [], [], [], []])
 	
 	return {
 		id,
 		startDateFormatted,
 		endDateFormatted,
-		dayRows
+		recipes
 	}
 }
 
