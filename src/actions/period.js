@@ -1,4 +1,4 @@
-import { getNextId, getNextStartDate, generateRecipeList } from '../utils'
+import { getNextStartDate, generateRecipeList } from '../utils'
 
 export function addPeriod() {
 	
@@ -9,7 +9,7 @@ export function addPeriod() {
 		const lastStartDate = lastPeriod ? lastPeriod.startDate : null
 		
 		const newPeriod = {
-			id: getNextId(state.periods),
+			id: state.nextId.period,
 			startDate: getNextStartDate(lastStartDate),
 			recipes: generateRecipeList(state)
 		}

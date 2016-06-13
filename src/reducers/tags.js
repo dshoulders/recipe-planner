@@ -1,9 +1,9 @@
-import { getNextId, updateById, removeById } from '../utils'
+import { updateById, removeById } from '../utils'
 
 const tags = (state = [], action) => {
 	
 	const createTag = (fields = {}) => Object.assign({
-		id: getNextId(state),
+		id: null,
 		text: null
 	}, fields)
 	
@@ -13,7 +13,7 @@ const tags = (state = [], action) => {
 			return action.data.tags
 		
 		case 'TAG_ADD':	
-			return [createTag()].concat(state)
+			return [createTag({ id: action.id })].concat(state)
 			
 		case 'TAG_UPDATE':
 			return updateById(state, action.id, 'text', action.value)

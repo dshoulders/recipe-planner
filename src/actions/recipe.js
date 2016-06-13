@@ -1,6 +1,13 @@
 export function addRecipe() {
-	return {
-		type: 'RECIPE_ADD'
+	return (dispatch, getState) => {
+		
+		const state = getState()
+		const id = state.nextId.recipe
+		
+		dispatch({
+			type: 'RECIPE_ADD',
+			id
+		})
 	}
 }
 

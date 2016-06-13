@@ -1,6 +1,13 @@
 export function addTag() {
-	return {
-		type: 'TAG_ADD'
+	return (dispatch, getState) => {
+		
+		const state = getState()
+		const id = state.nextId.tag
+		
+		dispatch({
+			type: 'TAG_ADD',
+			id
+		})
 	}
 }
 

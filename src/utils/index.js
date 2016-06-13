@@ -44,10 +44,6 @@ export const removeById = (collection, id) => {
 	}, [])
 }
 
-export const getNextId = collection => collection.reduce((nextId, currentItem) => {
-	return Math.max(nextId, currentItem.id + 1)
-}, 1)
-
 export const postJSON = (url, data) => {
 
 	return fetch(url, {

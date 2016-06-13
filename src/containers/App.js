@@ -24,7 +24,8 @@ const mapStateToProps = (state) => {
 		periods: state.periods,
 		recipes: state.recipes,
 		tags: state.tags,
-		days: state.days
+		days: state.days,
+		nextId: state.nextId
 	}
 		
 	previousState = state

@@ -1,9 +1,9 @@
-import { getNextId, updateById } from '../utils'
+import { removeById, updateById } from '../utils'
 
 const recipes = (state = [], action) => {
 	
 	const createRecipe = (fields = {}) => Object.assign({
-		id: getNextId(state),
+		id: null,
 		name: null,
 		book: null,
 		page: null,
@@ -20,7 +20,7 @@ const recipes = (state = [], action) => {
 			return updateById(state, action.id, action.property, action.value)			
 			
 		case 'RECIPE_ADD':
-			return [createRecipe()].concat(state)
+			return [createRecipe({ id: action.id })].concat(state)
 			
 		case 'RECIPE_SET_TAG':		
 			let { recipeId, tagId, value } = action
