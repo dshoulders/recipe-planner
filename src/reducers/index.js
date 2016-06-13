@@ -7,6 +7,7 @@ import ui from './ui'
 import haveData from './haveData'
 import simpleAuth from './simpleAuth'
 import nextId from './nextId'
+import recipeSearch from './recipeSearch'
 
 export default combineReducers({
 	days,
@@ -16,5 +17,6 @@ export default combineReducers({
 	ui,
 	haveData,
 	simpleAuth,
-	nextId
+	nextId,
+	recipeSearch
 })

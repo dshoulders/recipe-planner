@@ -1,5 +1,10 @@
 import moment from 'moment'
 
+export const isSearchMatch = (text, searchText) => {
+	const regex = new RegExp(searchText, 'gi')
+	return regex.test(text)
+}
+
 export const haveMatchingItem = (arr1, arr2) => {	
 	return arr1.reduce((matched, item) => {
 		return matched || arr2.indexOf(item) >= 0

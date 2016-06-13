@@ -2,6 +2,11 @@
 	margin-top: 30px;
 }
 
+.search,
 .add-recipe {
 	margin-left: 15px;
+}
+
+.search {
+	margin-top: 15px;
 }

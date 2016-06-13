@@ -1,17 +1,19 @@
 import { connect } from 'react-redux'
 import Recipes from '../components/Recipes'
-import { addRecipe } from '../actions/recipe'
+import { addRecipe, searchRecipes } from '../actions/recipe'
 
 
 const mapStateToProps = (state, ownProps) => {
 	return {
-		recipes: state.recipes
+		recipes: state.recipes,
+		recipeSearch: state.recipeSearch,
 	}
 }
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-		addNew: () => dispatch(addRecipe())
+		addNew: () => dispatch(addRecipe()),
+		handleSearchTextChange: newValue => dispatch(searchRecipes(newValue))
 	}
 }
 

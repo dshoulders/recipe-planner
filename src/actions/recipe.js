@@ -11,6 +11,20 @@ export function addRecipe() {
 	}
 }
 
+export function searchRecipes(searchText) {
+	return (dispatch, getState) => {
+		
+		const state = getState()
+		const recipes = state.recipes
+		
+		dispatch({
+			type: 'RECIPE_SEARCH',
+			searchText,
+			recipes
+		})
+	}
+}
+
 export function updateRecipe(id, property, value) {
 	return {
 		type: 'RECIPE_UPDATE',
