@@ -2,7 +2,6 @@
   "name": "recipe-planner",
   "version": "1.0.0",
   "description": "Plan meals way in advance",
-  //"main": "server.js",
   "dependencies": {
     "ajax-promise": "^0.8.1",
     "babel": "^6.5.2",
