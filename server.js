@@ -29,7 +29,7 @@ app.get('/api/data', function (req, res) {
 	res.sendFile( __dirname + "/" + "data.json" )
 })
 
-app.get('/', function (req, res) {
+app.get('/*', function (req, res) {
 	res.sendFile( __dirname + "/" + "index.html" )
 })
 
