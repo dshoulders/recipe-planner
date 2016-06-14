@@ -2,6 +2,7 @@
   "name": "recipe-planner",
   "version": "1.0.0",
   "description": "Plan meals way in advance",
+  "main": "server.js",
   "dependencies": {
     "ajax-promise": "^0.8.1",
     "babel": "^6.5.2",
@@ -41,7 +42,7 @@
   "scripts": {
     "dev": "node dev-server.js",
     "prod": "node ./node_modules/webpack/bin/webpack --config webpack.production.config.js -p",
-    "start": "npm run prod && node server.js",
+    "start": "node ./node_modules/webpack/bin/webpack --config webpack.production.config.js -p && node server.js",
     "lint": "eslint src"
   },
   "repository": {
