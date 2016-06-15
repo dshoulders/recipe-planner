@@ -42,8 +42,7 @@
   "scripts": {
     "dev": "node dev-server.js",
     "prod": "node ./node_modules/webpack/bin/webpack --config webpack.production.config.js -p",
-    "startserver": "node server.js",
-    "start": "npm run prod && npm run startserver",
+    "start": "node ./node_modules/webpack/bin/webpack --config webpack.production.config.js -p && node server.js",
     "lint": "eslint src"
   },
   "repository": {
