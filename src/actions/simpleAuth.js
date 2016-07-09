@@ -4,7 +4,7 @@ export function authCheck() {
 		headers: {
 			'Content-Type': 'application/json',
 			'Accept': 'application/json',
-			'pwd': sessionStorage.getItem('pwd')
+			'Authorization': 'Bearer ' + sessionStorage.getItem('auth')
 		}
 	}
 	
@@ -25,7 +25,7 @@ export function showLogin (value) {
 
 export function logout () {
 	return dispatch => {
-		sessionStorage.removeItem('pwd')
+		sessionStorage.removeItem('auth')
 		dispatch(loggedOut())
 	}
 }
@@ -42,18 +42,27 @@ export function login (value) {
 	var config = {
 		headers: {
 			'Content-Type': 'application/json',
-			'Accept': 'application/json',
-			'pwd': value
+			'Accept': 'application/json'
+		},
+		body: {
+			password: value
 		}
 	}
 	
-	sessionStorage.setItem('pwd', value)
-	
 	return dispatch => {
 
-		return fetch('/api/authcheck', config)
-			.then(response => response.json())
-			.then(json => dispatch(authResponse(json)))
+		return fetch('/api/login', config)
+			.then(response => {
+				if(response.ok) {
+					return response.json()
+				} else {
+					return ""
+				}
+			})
+			.then(json => {
+				sessionStorage.setItem('auth', json)
+				dispatch(authResponse(json))
+			})
 	}
 }
 

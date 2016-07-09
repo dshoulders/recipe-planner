@@ -15,7 +15,8 @@ const SimpleAuth = ({ isAuthenticated, pwdValue, showLogin, revealLogin, logoutC
 			{showLogin &&
 				<input 
 					type={'text'} 
-					className={'pwd'} 
+					className={'pwd'}
+					placeholder={'password'} 
 					value={pwdValue} 
 					onChange={e => pwdChange(e.target.value)} 
 					onKeyUp={e => pwdKeyUp(e.keyCode, e.target.value)} />

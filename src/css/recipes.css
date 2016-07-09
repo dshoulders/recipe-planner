@@ -2,11 +2,17 @@
 	margin-top: 30px;
 }
 
-.search,
-.add-recipe {
-	margin-left: 15px;
+.search {
+	margin-left: 15px;	
 }
 
 .search {
 	margin-top: 15px;
+}
+
+.buttons {
+	display: flex;
+	margin-left: 15px;
+	width: 400px;
+	justify-content: space-between;
 }

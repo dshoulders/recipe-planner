@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'
 import Recipes from '../components/Recipes'
 import { addRecipe, searchRecipes } from '../actions/recipe'
+import { backupData } from '../actions/data'
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -13,6 +14,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
 	return {
 		addNew: () => dispatch(addRecipe()),
+		backup: () => dispatch(backupData()),
 		handleSearchTextChange: newValue => dispatch(searchRecipes(newValue))
 	}
 }

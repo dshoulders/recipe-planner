@@ -34,3 +34,31 @@ export function saveSuccess () {
 		type: 'SIMPLEAUTH_SAVE_SUCCESS'
 	}
 }
+
+export function backupData () {
+
+	return dispatch => {
+
+		postJSON('/api/backup').then(repsonse => {
+			if(repsonse.success) {
+				dispatch(backupSuccess())
+
+				setTimeout(() => {
+					dispatch(dismissNotification())
+				}, 2000)
+			}
+		})
+	}
+}
+
+export function backupSuccess () {
+	return {
+		type: 'BACKUP_SUCCESS'
+	}
+}
+
+export function dismissNotification () {
+	return {
+		type: 'DISMISS_BACKUP_NOTIFICATION'
+	}
+}

@@ -1,4 +1,5 @@
 import React from 'react'
+import Notification from '../containers/Notification';
 import MainNav from './MainNav'
 import SimpleAuth from '../containers/SimpleAuth'
 import '../css/app.css'
@@ -19,6 +20,7 @@ const App = ({ isAuthenticated, dataToSave, haveData, needToSave, children, send
 	
 	return (
 		<div className={'app'}>
+			<Notification />
 			<div className={'header'}>
 				<MainNav />
 				<SimpleAuth />

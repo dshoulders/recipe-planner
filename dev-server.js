@@ -10,6 +10,10 @@ new WebpackDevServer(webpack(config), {
 		'/api/*': {
 			target: 'http://localhost:3001/',
 			secure: false
+		},
+		'/login': {
+			target: 'http://localhost:3001/',
+			secure: false
 		}
 	}
 }).listen(3000, 'localhost', function(err, result) {

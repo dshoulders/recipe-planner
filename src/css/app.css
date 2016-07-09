@@ -20,6 +20,11 @@
 	display: flex;
 }
 
+.calendar {
+	margin-top: 30px;
+}
+
 .generate-period {
 	margin-left: 15px;	
 }
+
